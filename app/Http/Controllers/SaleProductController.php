@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Brand;
+use App\Models\SaleProduct;
 use Illuminate\Http\Request;
-use Inertia\Inertia;
-class BrandController extends Controller
+
+class SaleProductController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,7 @@ class BrandController extends Controller
      */
     public function index()
     {
-        return Inertia::render('Brands/Index', [
-            'brands' => Brand::all()
-        ]);
+        //
     }
 
     /**
@@ -26,7 +24,7 @@ class BrandController extends Controller
      */
     public function create()
     {
-        return Inertia::render('Brands/Create');
+        //
     }
 
     /**
@@ -37,22 +35,16 @@ class BrandController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'name' => 'required',
-        ]);
-
-        Brand::create($request->all());
-
-        return redirect()->route('brands.index')->with('success', 'Brand created.');
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Brand  $brand
+     * @param  \App\Models\SaleProduct  $saleProduct
      * @return \Illuminate\Http\Response
      */
-    public function show(Brand $brand)
+    public function show(SaleProduct $saleProduct)
     {
         //
     }
@@ -60,41 +52,33 @@ class BrandController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Brand  $brand
+     * @param  \App\Models\SaleProduct  $saleProduct
      * @return \Illuminate\Http\Response
      */
-    public function edit(Brand $brand)
+    public function edit(SaleProduct $saleProduct)
     {
-        return Inertia::render('Brands/Edit', [
-            'brand' => $brand,
-        ]);
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Brand  $brand
+     * @param  \App\Models\SaleProduct  $saleProduct
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Brand $brand)
+    public function update(Request $request, SaleProduct $saleProduct)
     {
-        $request->validate([
-            'name' => 'required',
-        ]);
-
-        $brand->update($request->all());
-
-        return redirect()->back()->with('success', 'Brand updated.');
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Brand  $brand
+     * @param  \App\Models\SaleProduct  $saleProduct
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Brand $brand)
+    public function destroy(SaleProduct $saleProduct)
     {
         //
     }

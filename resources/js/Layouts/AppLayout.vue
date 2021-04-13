@@ -207,49 +207,19 @@
             <!-- Page Content -->
             <main class="md:flex md:flex-grow md:overflow-hidden">
                 <div class="hidden md:block bg-gray-800 flex-shrink-0 w-56 p-12 overflow-y-auto">
-                    <div class="mb-4">
-                        <inertia-link :href="route('dashboard')"
-                                       class="flex items-center group py-3">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
-                                 class="w-4 h-4 mr-2"
-                                 :class="isUrl('dashboard') ? 'fill-white' : ''"
-                            >
-                                <path
-                                    d="M10 20a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm-5.6-4.29a9.95 9.95 0 0 1 11.2 0 8 8 0 1 0-11.2 0zm6.12-7.64l3.02-3.02 1.41 1.41-3.02 3.02a2 2 0 1 1-1.41-1.41z"></path>
-                            </svg>
-                            <div :class="isUrl('dashboard') ? 'text-white' : 'text-indigo-300 group-hover:text-white'">Dashboard</div>
+                    <div class="mb-4" v-for="navItem in navItems">
+                        <inertia-link :href="route(navItem.route_index)" class="flex items-center group py-3">
+                            <div :class="isUrl(navItem.url) ? 'text-white' : 'text-indigo-300 group-hover:text-white'">
+                                {{ navItem.label }}</div>
                         </inertia-link>
                     </div>
-                    <div class="mb-4">
-                        <inertia-link :href="route('suppliers.index')" class="flex items-center group py-3">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-2" viewBox="0 0 20 20" :class="isUrl('suppliers') ? 'fill-white' : ''">
-                                <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
-                            </svg> <div :class="isUrl('suppliers') ? 'text-white' : 'text-indigo-300 group-hover:text-white'">Suppliers</div>
-                        </inertia-link>
-                    </div>
-                    <div class="mb-4">
-                        <inertia-link :href="route('categories.index')" class="flex items-center group py-3">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-2" viewBox="0 0 20 20" :class="isUrl('categories') ? 'fill-white' : ''">
-                                <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
-                            </svg> <div :class="isUrl('categories') ? 'text-white' : 'text-indigo-300 group-hover:text-white'">Categories</div>
-                        </inertia-link>
-                    </div>
-                    <div class="mb-4"><a href="https://demo.inertiajs.com/contacts" class="flex items-center group py-3">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
-                             class="w-4 h-4 mr-2 fill-indigo-400 group-hover:fill-white">
-                            <path
-                                d="M7 8a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm0 1c2.15 0 4.2.4 6.1 1.09L12 16h-1.25L10 20H4l-.75-4H2L.9 10.09A17.93 17.93 0 0 1 7 9zm8.31.17c1.32.18 2.59.48 3.8.92L18 16h-1.25L16 20h-3.96l.37-2h1.25l1.65-8.83zM13 0a4 4 0 1 1-1.33 7.76 5.96 5.96 0 0 0 0-7.52C12.1.1 12.53 0 13 0z"></path>
-                        </svg>
-                        <div class="text-indigo-300 group-hover:text-white">Contacts</div>
-                    </a></div>
-                    <div class="mb-4"><a href="https://demo.inertiajs.com/reports" class="flex items-center group py-3">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
-                             class="w-4 h-4 mr-2 fill-indigo-400 group-hover:fill-white">
-                            <path
-                                d="M4 16H0V6h20v10h-4v4H4v-4zm2-4v6h8v-6H6zM4 0h12v5H4V0zM2 8v2h2V8H2zm4 0v2h2V8H6z"></path>
-                        </svg>
-                        <div class="text-indigo-300 group-hover:text-white">Reports</div>
-                    </a></div>
+<!--                    <div class="mb-4">-->
+<!--                        <inertia-link :href="route('categories.index')" class="flex items-center group py-3">-->
+<!--                            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-2" viewBox="0 0 20 20" :class="isUrl('categories') ? 'fill-white' : ''">-->
+<!--                                <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />-->
+<!--                            </svg> <div :class="isUrl('categories') ? 'text-white' : 'text-indigo-300 group-hover:text-white'">Categories</div>-->
+<!--                        </inertia-link>-->
+<!--                    </div>-->
                 </div>
 
                 <div class="md:flex-1 px-4 py-8 md:p-12 md:overflow-y-auto" scroll-region>
@@ -269,6 +239,7 @@ import JetDropdownLink from '@/Jetstream/DropdownLink'
 import JetNavLink from '@/Jetstream/NavLink'
 import JetResponsiveNavLink from '@/Jetstream/ResponsiveNavLink'
 import FlashMessages from '@/Shared/FlashMessages'
+import navItems from '@/Shared/NavItems'
 
 export default {
     components: {
@@ -285,6 +256,7 @@ export default {
         return {
             showingNavigationDropdown: false,
             showingSidebarNavigationDropdown: false,
+            navItems
         }
     },
 

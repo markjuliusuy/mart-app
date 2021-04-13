@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Discount;
 use Illuminate\Http\Request;
-
+use Inertia\Inertia;
 class DiscountController extends Controller
 {
     /**
@@ -14,7 +14,9 @@ class DiscountController extends Controller
      */
     public function index()
     {
-        //
+        return Inertia::render('Discounts/Index', [
+            'discounts' => Discount::all()
+        ]);
     }
 
     /**
@@ -24,7 +26,7 @@ class DiscountController extends Controller
      */
     public function create()
     {
-        //
+        return Inertia::render('Discounts/Create');
     }
 
     /**
@@ -35,7 +37,14 @@ class DiscountController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'value' => 'required',
+        ]);
+
+        Discount::create($request->all());
+
+        return redirect()->route('discounts.index')->with('success', 'Discount created.');
     }
 
     /**
@@ -57,7 +66,9 @@ class DiscountController extends Controller
      */
     public function edit(Discount $discount)
     {
-        //
+        return Inertia::render('Discounts/Edit', [
+            'discount' => $discount,
+        ]);
     }
 
     /**
@@ -69,7 +80,13 @@ class DiscountController extends Controller
      */
     public function update(Request $request, Discount $discount)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'value' => 'required'
+        ]);
+        $discount->update($request->all());
+
+        return redirect()->back()->with('success', 'Discount updated.');
     }
 
     /**

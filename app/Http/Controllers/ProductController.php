@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\Brand;
+use App\Models\Category;
 use Illuminate\Http\Request;
-
+use Inertia\Inertia;
 class ProductController extends Controller
 {
     /**
@@ -14,7 +16,9 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+        return Inertia::render('Products/Index', [
+            'products' => Product::all()
+        ]);
     }
 
     /**
@@ -24,7 +28,10 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        return Inertia::render('Products/Create',  [
+            'brands' => Brand::all(),
+            'categories' => Category::all(),
+        ]);
     }
 
     /**
@@ -35,7 +42,14 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'price' => 'required',
+        ]);
+
+        Product::create($request->all());
+
+        return redirect()->route('products.index')->with('success', 'Product created.');
     }
 
     /**
@@ -57,7 +71,11 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        //
+        return Inertia::render('Products/Edit', [
+            'product' => $product,
+            'brands' => Brand::all(),
+            'categories' => Category::all(),
+        ]);
     }
 
     /**
@@ -69,7 +87,13 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'price' => 'required'
+        ]);
+        $product->update($request->all());
+
+        return redirect()->back()->with('success', 'Product updated.');
     }
 
     /**

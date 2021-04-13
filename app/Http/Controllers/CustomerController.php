@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Customer;
 use Illuminate\Http\Request;
-
+use Inertia\Inertia;
 class CustomerController extends Controller
 {
     /**
@@ -14,7 +14,9 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        //
+        return Inertia::render('Customers/Index', [
+            'customers' => Customer::all()
+        ]);
     }
 
     /**
@@ -24,7 +26,7 @@ class CustomerController extends Controller
      */
     public function create()
     {
-        //
+        return Inertia::render('Customers/Create');
     }
 
     /**
@@ -35,7 +37,14 @@ class CustomerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'first_name' => 'required',
+            'last_name' => 'required',
+        ]);
+
+        Customer::create($request->all());
+
+        return redirect()->route('customers.index')->with('success', 'Category created.');
     }
 
     /**
@@ -57,7 +66,9 @@ class CustomerController extends Controller
      */
     public function edit(Customer $customer)
     {
-        //
+        return Inertia::render('Customers/Edit', [
+            'customer' => $customer,
+        ]);
     }
 
     /**
@@ -69,7 +80,14 @@ class CustomerController extends Controller
      */
     public function update(Request $request, Customer $customer)
     {
-        //
+        $request->validate([
+            'first_name' => 'required',
+            'last_name' => 'required',
+        ]);
+
+        $customer->update($request->all());
+
+        return redirect()->back()->with('success', 'Customer updated.');
     }
 
     /**

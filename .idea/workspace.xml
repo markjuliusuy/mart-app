@@ -166,7 +166,7 @@
       <option name="presentableId" value="Default" />
       <updated>1617951448577</updated>
       <workItem from="1617951449874" duration="9204000" />
-      <workItem from="1617971816093" duration="33436000" />
+      <workItem from="1617971816093" duration="50797000" />
     </task>
     <servers />
   </component>
@@ -174,10 +174,14 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1618066913562">
+    <state x="442" y="154" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1618131028499">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1618066913562" />
+    <state x="442" y="154" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1618131028499" />
+    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1618229169609">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1618229169609" />
     <state width="1323" height="172" key="GridCell.Tab.0.bottom" timestamp="1617956592814">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -194,17 +198,17 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="172" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1617956592814" />
-    <state x="391" y="81" width="583" height="566" key="find.popup" timestamp="1618046926786">
+    <state x="391" y="81" width="583" height="566" key="find.popup" timestamp="1618229811856">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="391" y="81" width="583" height="566" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1618046926785" />
+    <state x="391" y="81" width="583" height="566" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1618229811856" />
     <state x="339" y="162" key="run.anything.popup" timestamp="1618060871624">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1618060871624" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1618111842377">
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1618238425449">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1618111842377" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1618238425449" />
   </component>
 </project>

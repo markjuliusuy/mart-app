@@ -85,16 +85,15 @@ class SupplierController extends Controller
      */
     public function update(Request $request, Supplier $supplier)
     {
-        $supplier->update(
-            $request->validate([
-                'company_name' => 'required',
-                'name' => 'required',
-                'contact_person' => 'required',
-                'contact_number' => 'required',
-                'email' => 'required|email',
-                'address' => 'required',
-            ])
-        );
+        $request->validate([
+            'company_name' => 'required',
+            'name' => 'required',
+            'contact_person' => 'required',
+            'contact_number' => 'required',
+            'email' => 'required|email',
+            'address' => 'required',
+        ]);
+        $supplier->update($request->all());
 
         return redirect()->back()->with('success', 'Supplier updated.');
 

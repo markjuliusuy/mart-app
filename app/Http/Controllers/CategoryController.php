@@ -45,7 +45,7 @@ class CategoryController extends Controller
 
         Category::create($request->all());
 
-        return redirect()->route('categories.index')->with('success', 'Description created.');
+        return redirect()->route('categories.index')->with('success', 'Category created.');
     }
 
     /**
@@ -81,12 +81,11 @@ class CategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
-        $category->update(
-            $request->validate([
-                'name' => 'required',
-                'description' => 'required'
-            ])
-        );
+        $request->validate([
+            'name' => 'required',
+            'description' => 'required'
+        ]);
+        $category->update($request->all());
 
         return redirect()->back()->with('success', 'Category updated.');
     }

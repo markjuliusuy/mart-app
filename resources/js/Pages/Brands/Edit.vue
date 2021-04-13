@@ -2,11 +2,11 @@
     <div>
 
         <teleport to="head">
-            <title>{{ page_title_action }}</title>
+            <title>{{ page_action_title }}</title>
         </teleport>
 
         <h1 class="mb-8 font-bold text-3xl">
-            <inertia-link class="text-indigo-400 hover:text-indigo-600" :href="route('categories.index')">{{ page_title_plural }}</inertia-link> <span class="text-indigo-400 font-medium">/</span> {{ form.name || page_action }}
+            <inertia-link class="text-indigo-400 hover:text-indigo-600" :href="route(route_index)">{{ page_title_plural }}</inertia-link> <span class="text-indigo-400 font-medium">/</span> {{ form.name || page_action }}
         </h1>
         <div class="mt-5 md:mt-0 md:col-span-2 max-w-3xl">
             <form @submit.prevent="update">
@@ -26,7 +26,7 @@
                 <div class="px-8 py-4 bg-gray-50 border-t border-gray-100 flex justify-end items-center">
                     <button :disabled="form.processing" class="flex items-center btn-indigo" type="submit">
                         <div v-if="form.processing" class="btn-spinner mr-2"/>
-                        {{ page_title_action }}
+                        {{ submit_action_label }}
                     </button>
                 </div>
             </form>
@@ -49,24 +49,29 @@ export default {
     layout: AppLayout,
     remember: 'form',
     props: {
-        category: Object,
+        brand: Object,
     },
     data() {
         return {
-            page_title: 'Category',
-            page_title_plural: 'Categories',
+            page_title: 'Brand',
+            page_title_plural: 'Brands',
             page_action: 'Update',
-            page_title_action: 'Update Category',
+            page_action_title: 'Update Brand',
+            submit_action_label: 'Update Brand',
+            route_index: 'brands.index',
+            route_create: 'brands.create',
+            route_edit: 'brands.edit',
+            route_store: 'brands.store',
+            route_update: 'brands.update',
             form: this.$inertia.form({
-                name: this.category.name,
-                description: this.category.description
+                name: this.brand.name,
+                description: this.brand.description
             }),
         }
-
     },
     methods: {
         update() {
-            this.form.put(this.route('categories.update', this.category.id))
+            this.form.put(this.route(this.route_update, this.brand.id))
         },
     },
 }
