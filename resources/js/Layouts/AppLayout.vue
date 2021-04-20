@@ -5,7 +5,7 @@
         <div class="md:h-screen md:flex md:flex-col min-h-screen bg-gray-100">
             <nav class="bg-white md:flex md:flex-shrink-0">
                 <div
-                    class="bg-gray-900 md:flex-shrink-0 md:w-56 px-6 py-4 flex items-center justify-between md:justify-center">
+                    class="bg-gray-900 md:flex-shrink-0 md:w-56 px-6 py-4 flex items-center justify-between md:justify-center transition-all duration-300" :class="{'-ml-56': !sidebarOpen}">
                     <a href="https://demo.inertiajs.com/" class="mt-1">
                         <svg viewBox="0 0 1185 266" xmlns="http://www.w3.org/2000/svg" width="120" height="28"
                              class="fill-white">
@@ -23,9 +23,14 @@
                 </div>
                 <!-- Primary Navigation Menu -->
                 <div
-                    class="bg-white border-b w-full p-4 md:py-0 md:px-12 text-sm md:text-md flex justify-between items-center">
+                    class="bg-white border-b w-full p-4 md:py-0 text-sm md:text-md md:px-2 flex justify-between items-center" >
                     <div class="flex">
                         <div class="flex-shrink-0 flex items-center">
+                            <button class="p-1 mr-4" @click="sidebarOpen = !sidebarOpen">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-6 w-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                                </svg>
+                            </button>
                             <div>Mart</div>
                         </div>
                     </div>
@@ -206,7 +211,7 @@
 
             <!-- Page Content -->
             <main class="md:flex md:flex-grow md:overflow-hidden">
-                <div class="hidden md:block bg-gray-800 flex-shrink-0 w-56 p-12 overflow-y-auto">
+                <div class="hidden md:block bg-gray-800 flex-shrink-0 w-56 p-12 overflow-y-auto transition-all duration-300" :class="{'-ml-56': !sidebarOpen}">
                     <div class="mb-4" v-for="navItem in navItems">
                         <inertia-link :href="route(navItem.route_index)" class="flex items-center group py-3">
                             <div :class="isUrl(navItem.url) ? 'text-white' : 'text-indigo-300 group-hover:text-white'">
@@ -222,7 +227,7 @@
 <!--                    </div>-->
                 </div>
 
-                <div class="md:flex-1 px-4 py-8 md:p-12 md:overflow-y-auto" scroll-region>
+                <div class="md:flex-1 md:p-12 md:overflow-y-auto" scroll-region>
                     <flash-messages />
                     <slot></slot>
                 </div>
@@ -256,7 +261,8 @@ export default {
         return {
             showingNavigationDropdown: false,
             showingSidebarNavigationDropdown: false,
-            navItems
+            navItems,
+            sidebarOpen: true
         }
     },
 

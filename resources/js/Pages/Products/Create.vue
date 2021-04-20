@@ -40,6 +40,7 @@
 <!--                              + Add</button>-->
                        </div>
                         <select name="brand_id" id="brand_id" v-model="form.brand_id" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                            <option value="">Select brand</option>
                             <option v-for="brand in brands" :value="brand.id">{{ brand.name }}</option>
                         </select>
                         <jet-input-error :message="form.errors.brand_id" class="mt-2"/>
@@ -47,6 +48,7 @@
                     <div class="col-span-6 sm:col-span-4 pb-6">
                         <jet-label for="category_id" value="Category"/>
                         <select name="category_id" id="category_id" v-model="form.category_id" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                            <option value="">Select category</option>
                             <option v-for="category in categories" :value="category.id">{{ category.name }}</option>
                         </select>
                         <jet-input-error :message="form.errors.category_id" class="mt-2"/>

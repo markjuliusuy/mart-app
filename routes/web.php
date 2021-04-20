@@ -9,6 +9,8 @@ use App\Http\Controllers\BrandController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\DiscountController;
+use App\Http\Controllers\SaleController;
+use App\Http\Controllers\InventoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,4 +45,6 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function(){
     Route::resource('discounts', DiscountController::class);
 
     Route::resource('products', ProductController::class);
+    Route::resource('sales', SaleController::class);
+    Route::resource('inventories', InventoryController::class);
 });

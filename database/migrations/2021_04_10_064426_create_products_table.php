@@ -21,7 +21,14 @@ class CreateProductsTable extends Migration
             $table->unsignedBigInteger('brand_id')->nullable();
             $table->unsignedBigInteger('category_id')->nullable();
             $table->decimal('price', 10, 2);
+            $table->integer('quantity')->nullable();
+
+
+            $table->decimal('discount_price', 10, 2)->nullable();
+            $table->dateTime('discount_start')->nullable();
+            $table->dateTime('discount_end')->nullable();
             $table->integer('reorder_level');
+            $table->date('expiration_date')->nullable();
             $table->timestamps();
 
             $table->foreign('brand_id')->references('id')->on('brands');

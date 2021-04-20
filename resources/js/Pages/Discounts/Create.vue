@@ -17,6 +17,11 @@
                         <jet-input-error :message="form.errors.name" class="mt-2"/>
                     </div>
                     <div class="col-span-6 sm:col-span-4 pb-6">
+                        <jet-label for="type" value="Type"/>
+                        <jet-input id="type" type="text" class="mt-1 block w-full" v-model="form.type" :error="form.errors.type"/>
+                        <jet-input-error :message="form.errors.type" class="mt-2"/>
+                    </div>
+                    <div class="col-span-6 sm:col-span-4 pb-6">
                         <jet-label for="value" value="Value"/>
                         <jet-input id="value" type="text" class="mt-1 block w-full" v-model="form.value" :error="form.errors.value"/>
                         <jet-input-error :message="form.errors.value" class="mt-2"/>
@@ -61,7 +66,8 @@ export default {
             route_store: 'discounts.store',
             form: this.$inertia.form({
                 name: null,
-                value: null
+                value: null,
+                type: null
             }),
         }
 

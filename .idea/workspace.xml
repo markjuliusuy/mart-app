@@ -4,7 +4,42 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="afa358b9-602f-4ecf-9b4b-dc657915006f" name="Default Changelist" comment="" />
+    <list default="true" id="afa358b9-602f-4ecf-9b4b-dc657915006f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/css/form.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Pages/Inventories/Create.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Pages/Inventories/Index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Pages/Inventories/Show.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Pages/Sales/Create.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Pages/Sales/Index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/mart-app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/mart-app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SaleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SaleController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/HandleInertiaRequests.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/HandleInertiaRequests.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Discount.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Discount.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Sale.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Sale.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/SaleProduct.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/SaleProduct.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_04_10_064426_create_products_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_04_10_064426_create_products_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_04_11_061814_create_discounts_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_04_11_061814_create_discounts_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_04_12_143156_create_sales_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_04_12_143156_create_sales_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_04_12_144950_create_sale_products_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_04_12_144950_create_sale_products_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/css/reset.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/css/reset.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Layouts/AppLayout.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Layouts/AppLayout.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Pages/Discounts/Create.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Discounts/Create.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Pages/Products/Create.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Products/Create.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Pages/Products/Edit.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Products/Edit.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Pages/Products/Index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Products/Index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Shared/NavItems.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Shared/NavItems.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Shared/vue3-good-table/Table.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Shared/vue3-good-table/Table.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,6 +48,9 @@
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -167,6 +205,13 @@
       <updated>1617951448577</updated>
       <workItem from="1617951449874" duration="9204000" />
       <workItem from="1617971816093" duration="50797000" />
+      <workItem from="1618276673104" duration="623000" />
+      <workItem from="1618312325267" duration="16237000" />
+      <workItem from="1618447887733" duration="610000" />
+      <workItem from="1618487084743" duration="38036000" />
+      <workItem from="1618668614821" duration="16202000" />
+      <workItem from="1618881914531" duration="1373000" />
+      <workItem from="1618917107788" duration="6928000" />
     </task>
     <servers />
   </component>
@@ -178,10 +223,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="442" y="154" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1618131028499" />
-    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1618229169609">
+    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1618921374595">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1618229169609" />
+    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1618921374595" />
     <state width="1323" height="172" key="GridCell.Tab.0.bottom" timestamp="1617956592814">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -198,17 +243,17 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="172" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1617956592814" />
-    <state x="391" y="81" width="583" height="566" key="find.popup" timestamp="1618229811856">
+    <state x="391" y="81" width="583" height="566" key="find.popup" timestamp="1618925563170">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="391" y="81" width="583" height="566" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1618229811856" />
-    <state x="339" y="162" key="run.anything.popup" timestamp="1618060871624">
+    <state x="391" y="81" width="583" height="566" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1618925563170" />
+    <state x="339" y="162" key="run.anything.popup" timestamp="1618836958528">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1618060871624" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1618238425449">
+    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1618836958528" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1618925005285">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1618238425449" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1618925005285" />
   </component>
 </project>

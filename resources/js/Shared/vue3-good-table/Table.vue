@@ -1434,7 +1434,7 @@ export default {
 
     getRowStyleClass (row) {
       let classes = ''
-      classes += 'clickable'
+      // classes += 'clickable'
       let rowStyleClasses
       if (typeof this.rowStyleClass === 'function') {
         rowStyleClasses = this.rowStyleClass(row)

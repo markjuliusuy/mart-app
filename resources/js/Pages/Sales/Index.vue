@@ -22,16 +22,18 @@
                 <div>
                     <vue-good-table
                         :columns="columns"
-                        :rows="products"
-                        :row-style-class="rowStyleClass"
+                        :rows="sales"
                         :pagination-options="{
                         enabled: true,
                       }"
+                        :search-options="{
+                            enabled: true,
+                          }"
                     >
                         <template v-slot:table-row="props">
                             <span v-if="props.column.field == 'actions'">
-                                <inertia-link :href="route(route_edit, props.row.id)" class="text-sm text-gray-700 underline">
-                                    Edit
+                                <inertia-link :href="route(route_show, props.row.id)" class="text-sm text-gray-700 underline">
+                                    Show
                                 </inertia-link>
                             </span>
                             <span v-else>
@@ -56,39 +58,20 @@ export default {
         VueGoodTable
     },
     props: {
-        products: Object,
+        sales: Object,
     },
     data(){
         return {
-            page_title: 'Product',
-            page_title_plural: 'Products',
-            page_title_action: 'Create Product',
-            route_create: 'products.create',
-            route_edit: 'products.edit',
+            page_title: 'Sale',
+            page_title_plural: 'Sales',
+            page_title_action: 'Create Sale',
+            route_create: 'sales.create',
+            route_edit: 'sales.edit',
+            route_show: 'sales.show',
             columns: [
                 {
-                    label: 'Code',
-                    field: 'code',
-                },
-                {
-                    label: 'Name',
-                    field: 'name',
-                },
-                {
-                    label: 'Price',
-                    field: 'price',
-                },
-                {
-                    label: 'Reorder Level',
-                    field: 'reorder_level',
-                },
-                {
-                    label: 'Stocks Left',
-                    field: 'stocks',
-                },
-                {
-                    label: 'Category',
-                    field: 'category.name',
+                    label: 'Date',
+                    field: 'created_at',
                 },
                 {
                     label: 'Actions',
@@ -96,11 +79,6 @@ export default {
                 }
             ]
         };
-    },
-    methods: {
-        rowStyleClass(row) {
-            return row.reorder_level >= row.stocks ? 'bg-red-300' : '';
-        }
     }
 }
 </script>

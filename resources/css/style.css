@@ -4,3 +4,24 @@
 .footer__row-count__select {
     background-image: none;
 }
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.custom-number-input input:focus {
+    outline: none !important;
+    --tw-ring-color: transparent;
+}
+
+.custom-number-input button:focus {
+    outline: none !important;
+    --tw-ring-color: transparent;
+}
+input:focus, select:focus, textarea:focus, button:focus, div:focus, a:focus,
+input:active, select:active, textarea:active, button:active, div:active, a:active {
+    outline: none;
+    --tw-ring-color: transparent;
+}
+
