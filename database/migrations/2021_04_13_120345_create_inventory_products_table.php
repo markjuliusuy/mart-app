@@ -21,7 +21,6 @@ class CreateInventoryProductsTable extends Migration
             $table->decimal('price', 10, 2);
             $table->integer('quantity');
             $table->decimal('total_amount', 10, 2);
-            $table->decimal('total_amount', 10, 2);
 
             $table->timestamps();
         });
