@@ -26,9 +26,9 @@ class CreateSaleProductsTable extends Migration
             $table->decimal('discount_amount', 10, 2)->nullable();
             $table->string('discount_type')->nullable();
             $table->decimal('total_amount', 10, 2);
-            $table->decimal('total_amount_no_discount', 10, 2);
-            $table->decimal('tendered_amount', 10, 2);
-            $table->decimal('change_amount', 10, 2);
+            $table->decimal('total_amount_no_discount', 10, 2)->nullable();
+            $table->decimal('tendered_amount', 10, 2)->nullable();
+            $table->decimal('change_amount', 10, 2)->nullable();
             $table->timestamps();
         });
     }
