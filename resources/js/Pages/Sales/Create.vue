@@ -182,6 +182,116 @@
         </div>
 
 
+        <div class="fixed z-10 inset-0 overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true" v-if="$page.props.flash.sale && showReceiptModal">
+            <div class="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+                <!--
+                  Background overlay, show/hide based on modal state.
+
+                  Entering: "ease-out duration-300"
+                    From: "opacity-0"
+                    To: "opacity-100"
+                  Leaving: "ease-in duration-200"
+                    From: "opacity-100"
+                    To: "opacity-0"
+                -->
+                <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
+
+                <!-- This element is to trick the browser into centering the modal contents. -->
+                <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+
+                <!--
+                  Modal panel, show/hide based on modal state.
+
+                  Entering: "ease-out duration-300"
+                    From: "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+                    To: "opacity-100 translate-y-0 sm:scale-100"
+                  Leaving: "ease-in duration-200"
+                    From: "opacity-100 translate-y-0 sm:scale-100"
+                    To: "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+                -->
+
+                <div class="print-container inline-block align-center bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-top sm:max-w-xl sm:w-full">
+                    <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                        <div class="sm:flex sm:items-start">
+                            <div class="w-full">
+
+                                <div class="text-center font-bold text-xl">
+                                    <span>Mart</span>
+                                </div>
+                                <div class="text-center">
+                                   <span class="block">Address Line 1</span>
+                                   <span class="block">Address Line 2</span>
+                                   <span class="block">012345678</span>
+                                </div>
+                                <div>
+                                    Order Date: {{ $page.props.flash.sale.created_at }}
+                                </div>
+                                <div>
+                                    Customer: {{ $page.props.flash.sale.customer_name }}
+                                </div>
+                                <div class="mt-5">
+                                    <table class="table-auto w-full">
+                                        <thead>
+                                            <tr>
+                                                <th class="w-1/2">Product</th>
+                                                <th class="w-1/4 text-right">Qty</th>
+                                                <th class="w-1/4 text-right">Amount</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr v-for="(sale_product, index) in $page.props.flash.sale.products">
+                                            <td>
+                                                {{ sale_product.product_name }}
+                                            </td>
+                                            <td class="text-right">
+                                                {{ sale_product.quantity}}
+                                            </td>
+                                            <td class="text-right">
+                                                {{ sale_product.total_amount }}
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2" class="text-right font-bold">Subtotal</td>
+                                            <td colspan="2" class="text-right">{{$page.props.flash.sale.subtotal_amount  }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2" class="text-right font-bold">Discount</td>
+                                            <td colspan="2" class="text-right">{{$page.props.flash.sale.discount_amount  }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2" class="text-right font-bold">Grand Total</td>
+                                            <td colspan="2" class="text-right">{{$page.props.flash.sale.grand_total  }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2" class="text-right font-bold">Tendered Amount</td>
+                                            <td colspan="2" class="text-right">{{$page.props.flash.sale.tendered_amount  }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2" class="text-right font-bold">Change</td>
+                                            <td colspan="2" class="text-right">{{$page.props.flash.sale.change_amount  }}</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse no-print">
+                        <button type="button" @click="printModal" class="no-print w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-indigo-600 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo500 sm:ml-3 sm:w-auto sm:text-sm">
+                            Print
+                        </button>
+                        <button @click="showReceiptModal = false;" type="button" class="no-print mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">
+                            Close
+                        </button>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+
         <jet-dialog-modal :show="showDiscountModal" max-width="sm">
 
             <template #content>
@@ -248,6 +358,7 @@ export default {
         discounts: Object,
         customers: Object,
         products: Object,
+        sale: Object
     },
     computed: {
         subtotal() {
@@ -280,6 +391,7 @@ export default {
             value: null,
             showDiscountModal: false,
             showPaymentModal: false,
+            showReceiptModal: false,
             page_title: 'Sale',
             page_title_plural: 'Sales',
             page_action: 'Update',
@@ -332,6 +444,7 @@ export default {
             this.form.post(this.route(this.route_store), {
                 onSuccess: function (data) {
                     console.log(data);
+                    $this.showReceiptModal = true;
                     $this.form.reset();
                     $this.showPaymentModal = false;
                 }
@@ -451,6 +564,9 @@ export default {
                 this.form.discount_type = 'percent';
                 this.form.discount_id = null;
             }
+        },
+        printModal() {
+            window.print();
         }
     },
 }

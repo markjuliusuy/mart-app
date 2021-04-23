@@ -109,12 +109,13 @@ class SaleController extends Controller
                 SaleProduct::create($sale_products);
             }
 
-
-            return $sale;
+            return $sale->id;
         });
 
+        $sale = Sale::find($id);
+
         return redirect()->route('sales.create')
-            ->with(['success' =>'Sale created.', 'sale_id' => $id]);
+            ->with(['success' =>'Sale created.', 'sale' => $sale]);
     }
 
     /**

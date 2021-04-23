@@ -25,3 +25,18 @@ input:active, select:active, textarea:active, button:active, div:active, a:activ
     --tw-ring-color: transparent;
 }
 
+@media print
+{
+    .no-print, .no-print *
+    {
+        display: none !important;
+    }
+    .print-container {
+        max-width: 100%;
+        width: 900px;
+        margin: 20px auto;
+        box-shadow: none;
+        vertical-align: top;
+        height: 900px;
+    }
+}

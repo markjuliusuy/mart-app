@@ -33,6 +33,10 @@ class Sale extends Model
         'transaction_type',
         'user_id'
     ];
+    protected $with = [
+        'products'
+    ];
+
 
     public function getCreatedAtAttribute($value){
         $date = Carbon::parse($value);
@@ -41,5 +45,10 @@ class Sale extends Model
     public function getUpdatedAtAttribute($value){
         $date = Carbon::parse($value);
         return $date->format('Y-m-d H:i');
+    }
+
+    public function products()
+    {
+        return $this->hasMany(SaleProduct::class, 'sale_id');
     }
 }
