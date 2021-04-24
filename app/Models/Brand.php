@@ -13,4 +13,16 @@ class Brand extends Model
         'name',
         'description'
     ];
+
+    protected $appends = [
+        'permissions',
+    ];
+
+    public function getPermissionsAttribute()
+    {
+        return [
+            'edit' => auth()->user()->can('edit brands', $this),
+            'delete' => auth()->user()->can('delete brands', $this),
+        ];
+    }
 }

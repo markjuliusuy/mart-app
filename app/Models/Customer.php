@@ -17,8 +17,18 @@ class Customer extends Model
         'date_of_birth',
     ];
 
-    protected $appends = ['name'];
+    protected $appends = [
+        'name',
+        'permissions'
+    ];
 
+    public function getPermissionsAttribute()
+    {
+        return [
+            'edit' => auth()->user()->can('edit customers', $this),
+            'delete' => auth()->user()->can('delete customers', $this),
+        ];
+    }
 
     public function getNameAttribute()
     {

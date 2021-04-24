@@ -14,4 +14,16 @@ class Discount extends Model
         'value',
         'type',
     ];
+
+    protected $appends = [
+        'permissions'
+    ];
+
+    public function getPermissionsAttribute()
+    {
+        return [
+            'edit' => auth()->user()->can('edit discounts', $this),
+            'delete' => auth()->user()->can('delete discounts', $this),
+        ];
+    }
 }

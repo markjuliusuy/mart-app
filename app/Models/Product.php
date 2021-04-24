@@ -20,13 +20,22 @@ class Product extends Model
     ];
 
     protected $appends = [
-      'stocks',
-      'sales_name',
+        'stocks',
+        'sales_name',
+        'permissions'
     ];
 
     protected $with = [
-      'category'
+        'category'
     ];
+
+    public function getPermissionsAttribute()
+    {
+        return [
+            'edit' => auth()->user()->can('edit products', $this),
+            'delete' => auth()->user()->can('delete products', $this),
+        ];
+    }
 
     public function getStocksAttribute()
     {

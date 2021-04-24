@@ -13,4 +13,16 @@ class Category extends Model
         'name',
         'description'
     ];
+
+    protected $appends = [
+        'permissions',
+    ];
+
+    public function getPermissionsAttribute()
+    {
+        return [
+            'edit' => auth()->user()->can('edit categories', $this),
+            'delete' => auth()->user()->can('delete categories', $this),
+        ];
+    }
 }

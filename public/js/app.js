@@ -17696,7 +17696,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   data: function data() {
     return {
       form: this.$inertia.form({
-        email: '',
+        username: '',
         password: '',
         remember: false
       })
@@ -18111,7 +18111,11 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
-    onCellClick: function onCellClick(params) {}
+    destroy: function destroy(id) {
+      if (confirm('Are you sure you want to delete?')) {
+        this.$inertia["delete"](this.route('brands.destroy', id));
+      }
+    }
   }
 });
 
@@ -18253,7 +18257,11 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
-    onCellClick: function onCellClick(params) {}
+    destroy: function destroy(id) {
+      if (confirm('Are you sure you want to delete?')) {
+        this.$inertia["delete"](this.route('categories.destroy', id));
+      }
+    }
   }
 });
 
@@ -18422,6 +18430,13 @@ __webpack_require__.r(__webpack_exports__);
         field: 'actions'
       }]
     };
+  },
+  methods: {
+    destroy: function destroy(id) {
+      if (confirm('Are you sure you want to delete?')) {
+        this.$inertia["delete"](this.route('customers.destroy', id));
+      }
+    }
   }
 });
 
@@ -18609,6 +18624,13 @@ __webpack_require__.r(__webpack_exports__);
         field: 'actions'
       }]
     };
+  },
+  methods: {
+    destroy: function destroy(id) {
+      if (confirm('Are you sure you want to delete?')) {
+        this.$inertia["delete"](this.route('discounts.destroy', id));
+      }
+    }
   }
 });
 
@@ -19035,6 +19057,11 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
+    destroy: function destroy(id) {
+      if (confirm('Are you sure you want to delete?')) {
+        this.$inertia["delete"](this.route('products.destroy', id));
+      }
+    },
     rowStyleClass: function rowStyleClass(row) {
       return row.reorder_level >= row.stocks ? 'bg-red-300' : '';
     }
@@ -19976,7 +20003,11 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
-    onCellClick: function onCellClick(params) {}
+    destroy: function destroy(id) {
+      if (confirm('Are you sure you want to delete?')) {
+        this.$inertia["delete"](this.route('suppliers.destroy', id));
+      }
+    }
   }
 });
 
@@ -24702,15 +24733,15 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
           return $options.submit && $options.submit.apply($options, arguments);
         }, ["prevent"]))
       }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_label, {
-        "for": "email",
-        value: "Email"
+        "for": "username",
+        value: "Username"
       }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_input, {
-        id: "email",
-        type: "email",
+        id: "username",
+        type: "text",
         "class": "mt-1 block w-full",
-        modelValue: $data.form.email,
+        modelValue: $data.form.username,
         "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
-          return $data.form.email = $event;
+          return $data.form.username = $event;
         }),
         required: "",
         autofocus: ""
@@ -25626,7 +25657,7 @@ var _hoisted_7 = {
   key: 0
 };
 
-var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Edit ");
+var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Edit");
 
 var _hoisted_9 = {
   key: 1
@@ -25688,7 +25719,15 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
           }, 1032
           /* PROPS, DYNAMIC_SLOTS */
-          , ["href"])])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("span", _hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(props.formattedRow[props.column.field]), 1
+          , ["href"]), props.row.permissions["delete"] ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("button", {
+            key: 0,
+            onClick: function onClick($event) {
+              return $options.destroy(props.row.id);
+            },
+            "class": "text-sm underline ml-1"
+          }, "Delete", 8
+          /* PROPS */
+          , ["onClick"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("span", _hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(props.formattedRow[props.column.field]), 1
           /* TEXT */
           ))];
         }),
@@ -26019,7 +26058,7 @@ var _hoisted_8 = {
   key: 0
 };
 
-var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Edit ");
+var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Edit");
 
 var _hoisted_10 = {
   key: 1
@@ -26061,7 +26100,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         }
       }, {
         "table-row": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function (props) {
-          return [props.column.field == 'actions' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("span", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_inertia_link, {
+          return [props.column.field == 'actions' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_inertia_link, {
             href: _ctx.route('categories.edit', props.row.id),
             "class": "text-sm text-gray-700 underline"
           }, {
@@ -26073,7 +26112,15 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
           }, 1032
           /* PROPS, DYNAMIC_SLOTS */
-          , ["href"])])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("span", _hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(props.formattedRow[props.column.field]), 1
+          , ["href"]), props.row.permissions["delete"] ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("button", {
+            key: 0,
+            onClick: function onClick($event) {
+              return $options.destroy(props.row.id);
+            },
+            "class": "text-sm underline ml-1"
+          }, "Delete", 8
+          /* PROPS */
+          , ["onClick"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(props.formattedRow[props.column.field]), 1
           /* TEXT */
           ))];
         }),
@@ -26518,7 +26565,7 @@ var _hoisted_7 = {
   key: 0
 };
 
-var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Edit ");
+var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Edit");
 
 var _hoisted_9 = {
   key: 1
@@ -26580,7 +26627,15 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
           }, 1032
           /* PROPS, DYNAMIC_SLOTS */
-          , ["href"])])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("span", _hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(props.formattedRow[props.column.field]), 1
+          , ["href"]), props.row.permissions["delete"] ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("button", {
+            key: 0,
+            onClick: function onClick($event) {
+              return $options.destroy(props.row.id);
+            },
+            "class": "text-sm underline ml-1"
+          }, "Delete", 8
+          /* PROPS */
+          , ["onClick"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("span", _hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(props.formattedRow[props.column.field]), 1
           /* TEXT */
           ))];
         }),
@@ -26969,7 +27024,7 @@ var _hoisted_7 = {
   key: 0
 };
 
-var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Edit ");
+var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Edit");
 
 var _hoisted_9 = {
   key: 1
@@ -27031,7 +27086,15 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
           }, 1032
           /* PROPS, DYNAMIC_SLOTS */
-          , ["href"])])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("span", _hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(props.formattedRow[props.column.field]), 1
+          , ["href"]), props.row.permissions["delete"] ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("button", {
+            key: 0,
+            onClick: function onClick($event) {
+              return $options.destroy(props.row.id);
+            },
+            "class": "text-sm underline ml-1"
+          }, "Delete", 8
+          /* PROPS */
+          , ["onClick"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("span", _hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(props.formattedRow[props.column.field]), 1
           /* TEXT */
           ))];
         }),
@@ -28358,7 +28421,7 @@ var _hoisted_7 = {
   key: 0
 };
 
-var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Edit ");
+var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Edit");
 
 var _hoisted_9 = {
   key: 1
@@ -28418,7 +28481,15 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
           }, 1032
           /* PROPS, DYNAMIC_SLOTS */
-          , ["href"])])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("span", _hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(props.formattedRow[props.column.field]), 1
+          , ["href"]), props.row.permissions["delete"] ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("button", {
+            key: 0,
+            onClick: function onClick($event) {
+              return $options.destroy(props.row.id);
+            },
+            "class": "text-sm underline ml-1"
+          }, "Delete", 8
+          /* PROPS */
+          , ["onClick"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("span", _hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(props.formattedRow[props.column.field]), 1
           /* TEXT */
           ))];
         }),
@@ -30822,7 +30893,7 @@ var _hoisted_8 = {
   key: 0
 };
 
-var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Edit ");
+var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Edit");
 
 var _hoisted_10 = {
   key: 1
@@ -30876,7 +30947,15 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
           }, 1032
           /* PROPS, DYNAMIC_SLOTS */
-          , ["href"])])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("span", _hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(props.formattedRow[props.column.field]), 1
+          , ["href"]), props.row.permissions["delete"] ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("button", {
+            key: 0,
+            onClick: function onClick($event) {
+              return $options.destroy(props.row.id);
+            },
+            "class": "text-sm underline ml-1"
+          }, "Delete", 8
+          /* PROPS */
+          , ["onClick"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("span", _hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(props.formattedRow[props.column.field]), 1
           /* TEXT */
           ))];
         }),

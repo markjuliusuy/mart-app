@@ -97,6 +97,7 @@ class DiscountController extends Controller
      */
     public function destroy(Discount $discount)
     {
-        //
+        $discount->delete();
+        return redirect()->back()->with('success', 'Discount deleted.');
     }
 }

@@ -30,9 +30,7 @@
                     >
                         <template v-slot:table-row="props">
                             <span v-if="props.column.field == 'actions'">
-                                <inertia-link :href="route(route_edit, props.row.id)" class="text-sm text-gray-700 underline">
-                                    Edit
-                                </inertia-link>
+                                <inertia-link :href="route(route_edit, props.row.id)" class="text-sm text-gray-700 underline">Edit</inertia-link><button  @click="destroy(props.row.id)" class="text-sm underline ml-1" v-if="props.row.permissions.delete" >Delete</button>
                             </span>
                             <span v-else>
                                 {{ props.formattedRow[props.column.field] }}
@@ -98,6 +96,11 @@ export default {
         };
     },
     methods: {
+        destroy(id) {
+            if (confirm('Are you sure you want to delete?')) {
+                this.$inertia.delete(this.route('products.destroy', id))
+            }
+        },
         rowStyleClass(row) {
             return row.reorder_level >= row.stocks ? 'bg-red-300' : '';
         }

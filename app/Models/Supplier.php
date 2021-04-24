@@ -18,6 +18,18 @@ class Supplier extends Model
         'address',
     ];
 
+    protected $appends = [
+        'permissions'
+    ];
+
+    public function getPermissionsAttribute()
+    {
+        return [
+            'edit' => auth()->user()->can('edit suppliers', $this),
+            'delete' => auth()->user()->can('delete suppliers', $this),
+        ];
+    }
+
     public function getCreatedAtAttribute($value){
         $date = Carbon::parse($value);
         return $date->format('Y-m-d H:i');

@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\User;
+use Faker\Factory;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon as Carbon;
@@ -14,13 +16,25 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('users')->insert([
-            'id' => 1,
-            'name' => 'Mark Julius Uy',
-            'email' => 'markjuliusuy@gmail.com',
-            'password' => bcrypt('admin'),
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-        ]);
+        $this->call(
+            [
+                PermissionSeeder::class,
+                RoleSeeder::class,
+                CategorySeeder::class,
+                DiscountSeeder::class,
+                ProductSeeder::class,
+            ]
+        );
+        $user = User::create(
+            [
+                'name' => 'Mark Julius Uy',
+                'username' => 'admin',
+                'email' => 'markjuliusuy@gmail.com',
+                'password' => bcrypt('admin')
+            ]
+        );
+
+        $user->assignRole('admin');
+
     }
 }
