@@ -28,13 +28,13 @@ class CreateSalesTable extends Migration
 
             $table->decimal('total_price', 10, 2);
             $table->integer('total_quantity');
+            $table->integer('total_discount')->nullable();
             $table->decimal('subtotal_amount', 10, 2);
-            $table->decimal('subtotal_amount_no_vat', 10, 2);
+            $table->decimal('subtotal_amount_no_vat', 10, 2)->nullable();
             $table->decimal('total_amount', 10, 2);
             $table->decimal('tendered_amount', 10, 2);
             $table->decimal('change_amount', 10, 2);
             $table->decimal('grand_total', 10, 2);
-            $table->decimal('change', 10, 2);
             $table->string('notes')->nullable();
             $table->string('transaction_type')->nullable();
             $table->integer('status')->nullable();

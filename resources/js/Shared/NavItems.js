@@ -5,14 +5,14 @@ const navItems = [
         "label": "Dashboard",
     },
     {
-        "route_index": "products.index",
-        "url": "products",
-        "label": "Products",
-    },
-    {
         "route_index": "sales.index",
         "url": "sales",
         "label": "Sales",
+    },
+    {
+        "route_index": "products.index",
+        "url": "products",
+        "label": "Products",
     },
     {
         "route_index": "inventories.index",
@@ -25,6 +25,11 @@ const navItems = [
         "label": "Suppliers",
     },
     {
+        "route_index": "customers.index",
+        "url": "customers",
+        "label": "Customers",
+    },
+    {
         "route_index": "categories.index",
         "url": "categories",
         "label": "Categories",
@@ -33,11 +38,6 @@ const navItems = [
         "route_index": "brands.index",
         "url": "brands",
         "label": "Brands",
-    },
-    {
-        "route_index": "customers.index",
-        "url": "customers",
-        "label": "Customers",
     },
     {
         "route_index": "discounts.index",

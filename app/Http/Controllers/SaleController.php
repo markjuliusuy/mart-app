@@ -126,7 +126,10 @@ class SaleController extends Controller
      */
     public function show(Sale $sale)
     {
-        //
+        $sale->load('products');
+        return Inertia::render('Sales/Show', [
+            'sale' => $sale
+        ]);
     }
 
     /**

@@ -36,11 +36,6 @@
                         <jet-input-error :message="form.errors.company_name" class="mt-2"/>
                     </div>
                     <div class="col-span-6 sm:col-span-4 pb-6">
-                        <jet-label for="name" value="Name"/>
-                        <jet-input id="name" type="text" class="mt-1 block w-full" v-model="form.name" :error="form.errors.name"/>
-                        <jet-input-error :message="form.errors.name" class="mt-2"/>
-                    </div>
-                    <div class="col-span-6 sm:col-span-4 pb-6">
                         <jet-label for="contact_person" value="Contact Person"/>
                         <jet-input id="contact_person" type="text" class="mt-1 block w-full" v-model="form.contact_person" :error="form.errors.contact_person"/>
                         <jet-input-error :message="form.errors.contact_person" class="mt-2"/>

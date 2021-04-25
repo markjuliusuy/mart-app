@@ -15,7 +15,7 @@
         <div class="mt-5 md:mt-0 md:col-span-2 max-w-4xl">
             <div class="px-4 py-5 bg-white sm:p-6 shadow sm:rounded-tl-md sm:rounded-tr-md grid grid-cols-6 gap-6">
                 <div class="col-span-12 sm:col-span-12 pb-2">
-                    {{ inventory.supplier_name }}
+                    {{ sale.customer_name }}
                 </div>
 
             </div>
@@ -28,7 +28,7 @@
                         <th class="px-6 pt-6 pb-4 text-right" colspan="2">Price</th>
                         <th class="px-6 pt-6 pb-4 text-right" colspan="2">Amount</th>
                     </tr>
-                    <tr v-for="(selected_product, index) in inventory.products" :key="selected_product.id"
+                    <tr v-for="(selected_product, index) in sale.products" :key="selected_product.id"
                         class="hover:bg-gray-100 focus-within:bg-gray-100 text-right">
                         <td class="border-t text-left">
                             <div class="px-6 pt-6 pb-4">
@@ -37,13 +37,13 @@
                         </td>
                         <td class="border-t">
                             <div class="px-6 pt-6 pb-4">
-                            {{ selected_product.quantity }}
+                                {{ selected_product.quantity }}
                             </div>
                         </td>
                         <td class="border-t" colspan="2">
                             <div class="px-6 pt-6 pb-4">
                                 {{ selected_product.price }}
-                             </div>
+                            </div>
                         </td>
                         <td class="border-t" colspan="2">
                             <div class="px-6 pt-6 pb-4">
@@ -58,8 +58,16 @@
                         </td>
                     </tr>
                     <tr class="border-t text-right font-bold">
-                        <th class="px-6 pt-6 pb-4" colspan="4">Total</th>
-                        <th class="px-6 pt-6 pb-4" colspan="2">{{ parseFloat(inventory.total_amount).toLocaleString(undefined, {minimumFractionDigits: 2}) }}</th>
+                        <th class="px-6 pt-6 pb-4" colspan="4">Subtotal</th>
+                        <th class="px-6 pt-6 pb-4" colspan="2">{{ parseFloat(sale.subtotal_amount).toLocaleString(undefined, {minimumFractionDigits: 2}) }}</th>
+                    </tr>
+                    <tr class="text-right font-bold">
+                        <th class="px-6 pt-6 pb-4" colspan="4">Discount</th>
+                        <th class="px-6 pt-6 pb-4" colspan="2">{{ parseFloat(sale.total_discount).toLocaleString(undefined, {minimumFractionDigits: 2}) }}</th>
+                    </tr>
+                    <tr class="border-t text-right font-bold">
+                        <th class="px-6 pt-6 pb-4" colspan="4">Grand Total</th>
+                        <th class="px-6 pt-6 pb-4" colspan="2">{{ parseFloat(sale.grand_total).toLocaleString(undefined, {minimumFractionDigits: 2}) }}</th>
                     </tr>
                 </table>
             </div>
@@ -81,19 +89,19 @@ export default {
     },
     layout: AppLayout,
     props: {
-        inventory: Object,
+        sale: Object,
     },
     data() {
         return {
-            page_title: 'Inventory',
-            page_title_plural: 'Inventories',
-            page_action: 'Update',
-            page_action_title: 'Create Inventory',
+            page_title: 'Sale',
+            page_title_plural: 'Sales',
+            page_action: 'Show',
+            page_action_title: 'Show Sale',
             submit_action_label: 'Save',
-            route_index: 'inventories.index',
-            route_create: 'inventories.create',
-            route_edit: 'inventories.edit',
-            route_store: 'inventories.store',
+            route_index: 'sales.index',
+            route_create: 'sales.create',
+            route_edit: 'sales.edit',
+            route_store: 'sales.store',
         }
 
     },
