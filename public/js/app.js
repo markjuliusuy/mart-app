@@ -17346,7 +17346,7 @@ __webpack_require__.r(__webpack_exports__);
       navItems: _Shared_NavItems__WEBPACK_IMPORTED_MODULE_7__.default,
       sidebarOpen: true,
       timeInterval: null,
-      time: Intl.DateTimeFormat(navigator.language, {
+      time: Intl.DateTimeFormat('en-US', {
         dateStyle: 'full',
         timeStyle: 'medium'
       }).format()
@@ -17363,7 +17363,7 @@ __webpack_require__.r(__webpack_exports__);
     this.timeInterval = setInterval(function () {
       // Concise way to format time according to system locale.
       // In my case this returns "3:48:00 am"
-      _this.time = Intl.DateTimeFormat(navigator.language, {
+      _this.time = Intl.DateTimeFormat('en-US', {
         dateStyle: 'full',
         timeStyle: 'medium'
       }).format();

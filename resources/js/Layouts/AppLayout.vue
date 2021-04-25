@@ -226,7 +226,7 @@ export default {
             navItems,
             sidebarOpen: true,
             timeInterval: null,
-            time: Intl.DateTimeFormat(navigator.language, {
+            time: Intl.DateTimeFormat('en-US', {
                 dateStyle: 'full',
                 timeStyle: 'medium'
             }).format()
@@ -241,7 +241,7 @@ export default {
         this.timeInterval = setInterval(() => {
             // Concise way to format time according to system locale.
             // In my case this returns "3:48:00 am"
-            this.time = Intl.DateTimeFormat(navigator.language, {
+            this.time = Intl.DateTimeFormat('en-US', {
                 dateStyle: 'full',
                 timeStyle: 'medium'
             }).format()
