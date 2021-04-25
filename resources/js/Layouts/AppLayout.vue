@@ -226,13 +226,10 @@ export default {
             navItems,
             sidebarOpen: true,
             timeInterval: null,
-            time: Intl.DateTimeFormat('en-US', {
-                dateStyle: 'full',
-                timeStyle: 'medium'
-            }).format()
+            time: this.getDateTime()
         }
     },
-    beforeDestroy() {
+    beforeUnmount() {
         // prevent memory leak
         clearInterval(this.timeInterval)
     },
@@ -241,13 +238,27 @@ export default {
         this.timeInterval = setInterval(() => {
             // Concise way to format time according to system locale.
             // In my case this returns "3:48:00 am"
-            this.time = Intl.DateTimeFormat('en-US', {
-                dateStyle: 'full',
-                timeStyle: 'medium'
-            }).format()
+            this.time = this.getDateTime()
         }, 1000)
     },
     methods: {
+        getDateTime()
+        {
+            const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+            const date = new Date();
+            const month = months[date.getMonth()];
+            const dateNum = date.getDate();
+            const year = date.getFullYear();
+            const hour = date.getHours();
+            let ampm = hour >= 12 ? 'PM' : 'AM';
+            let hours = hour % 12;
+            hours = hours ? hours : 12; // the hour '0' should be '12'
+            let minutes = date.getMinutes();
+            minutes = minutes < 10 ? '0'+minutes : minutes;
+            let seconds = date.getSeconds();
+            seconds = seconds < 10 ? '0'+seconds : seconds;
+            return `${month} ${dateNum}, ${year} ${hours}:${minutes}:${seconds} ${ampm}`;
+        },
         switchToTeam(team) {
             this.$inertia.put(route('current-team.update'), {
                 'team_id': team.id

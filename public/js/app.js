@@ -17346,13 +17346,10 @@ __webpack_require__.r(__webpack_exports__);
       navItems: _Shared_NavItems__WEBPACK_IMPORTED_MODULE_7__.default,
       sidebarOpen: true,
       timeInterval: null,
-      time: Intl.DateTimeFormat('en-US', {
-        dateStyle: 'full',
-        timeStyle: 'medium'
-      }).format()
+      time: this.getDateTime()
     };
   },
-  beforeDestroy: function beforeDestroy() {
+  beforeUnmount: function beforeUnmount() {
     // prevent memory leak
     clearInterval(this.timeInterval);
   },
@@ -17363,13 +17360,27 @@ __webpack_require__.r(__webpack_exports__);
     this.timeInterval = setInterval(function () {
       // Concise way to format time according to system locale.
       // In my case this returns "3:48:00 am"
-      _this.time = Intl.DateTimeFormat('en-US', {
-        dateStyle: 'full',
-        timeStyle: 'medium'
-      }).format();
+      _this.time = _this.getDateTime();
     }, 1000);
   },
   methods: {
+    getDateTime: function getDateTime() {
+      var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+      var date = new Date();
+      var month = months[date.getMonth()];
+      var dateNum = date.getDate();
+      var year = date.getFullYear();
+      var hour = date.getHours();
+      var ampm = hour >= 12 ? 'PM' : 'AM';
+      var hours = hour % 12;
+      hours = hours ? hours : 12; // the hour '0' should be '12'
+
+      var minutes = date.getMinutes();
+      minutes = minutes < 10 ? '0' + minutes : minutes;
+      var seconds = date.getSeconds();
+      seconds = seconds < 10 ? '0' + seconds : seconds;
+      return "".concat(month, " ").concat(dateNum, ", ").concat(year, " ").concat(hours, ":").concat(minutes, ":").concat(seconds, " ").concat(ampm);
+    },
     switchToTeam: function switchToTeam(team) {
       this.$inertia.put(route('current-team.update'), {
         'team_id': team.id
