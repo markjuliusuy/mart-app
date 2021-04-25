@@ -62,9 +62,9 @@
         },
         data(){
             return {
-                page_title: 'Inventory',
-                page_title_plural: 'Inventory',
-                page_title_action: 'Create Inventory',
+                page_title: 'Receiving',
+                page_title_plural: 'Receiving',
+                page_title_action: 'Create Receiving',
                 route_create: 'inventories.create',
                 route_edit: 'inventories.edit',
                 route_show: 'inventories.show',

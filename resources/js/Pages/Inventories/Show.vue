@@ -85,10 +85,10 @@ export default {
     },
     data() {
         return {
-            page_title: 'Inventory',
-            page_title_plural: 'Inventories',
+            page_title: 'Receiving',
+            page_title_plural: 'Receiving',
             page_action: 'Update',
-            page_action_title: 'Create Inventory',
+            page_action_title: 'Create Receiving',
             submit_action_label: 'Save',
             route_index: 'inventories.index',
             route_create: 'inventories.create',
