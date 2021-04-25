@@ -23797,30 +23797,14 @@ var _hoisted_34 = {
 var _hoisted_35 = {
   "class": "mb-4"
 };
-
-var _hoisted_36 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("svg", {
-  xmlns: "http://www.w3.org/2000/svg",
-  "class": "h-6 w-6",
-  fill: "none",
-  viewBox: "0 0 24 24",
-  stroke: "currentColor"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("path", {
-  "stroke-linecap": "round",
-  "stroke-linejoin": "round",
-  "stroke-width": "2",
-  d: "M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-})], -1
-/* HOISTED */
-);
-
-var _hoisted_37 = {
+var _hoisted_36 = {
   "class": "md:flex md:flex-grow md:overflow-hidden"
 };
-var _hoisted_38 = {
+var _hoisted_37 = {
   "class": "mb-4"
 };
-var _hoisted_39 = {
-  "class": "md:flex-1 md:p-12 md:overflow-y-auto",
+var _hoisted_38 = {
+  "class": "md:flex-1 p-4 md:p-12 md:overflow-y-auto",
   "scroll-region": ""
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
@@ -24039,7 +24023,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       "class": "flex items-center group py-3"
     }, {
       "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-        return [_hoisted_36, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+        return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
           "class": $options.isUrl(navItem.url) ? 'text-white' : 'text-indigo-300 group-hover:text-white'
         }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(navItem.label), 3
         /* TEXT, CLASS */
@@ -24055,12 +24039,12 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   /* UNKEYED_FRAGMENT */
   ))])])])], 2
   /* CLASS */
-  )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Page Content "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("main", _hoisted_37, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+  )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Page Content "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("main", _hoisted_36, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
     "class": ["hidden md:block bg-gray-800 flex-shrink-0 w-56 p-8 overflow-y-auto transition-all duration-300", {
       '-ml-56': !$data.sidebarOpen
     }]
   }, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.navItems, function (navItem) {
-    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_38, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_inertia_link, {
+    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_37, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_inertia_link, {
       href: _ctx.route(navItem.route_index),
       "class": "flex items-center group py-3"
     }, {
@@ -24081,7 +24065,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   /* UNKEYED_FRAGMENT */
   )), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                    <div class=\"mb-4\">"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                        <inertia-link :href=\"route('categories.index')\" class=\"flex items-center group py-3\">"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                            <svg xmlns=\"http://www.w3.org/2000/svg\" class=\"w-4 h-4 mr-2\" viewBox=\"0 0 20 20\" :class=\"isUrl('categories') ? 'fill-white' : ''\">"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                                <path d=\"M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z\" />"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                            </svg> <div :class=\"isUrl('categories') ? 'text-white' : 'text-indigo-300 group-hover:text-white'\">Categories</div>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                        </inertia-link>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                    </div>")], 2
   /* CLASS */
-  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_39, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_flash_messages), (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderSlot)(_ctx.$slots, "default")])])])]);
+  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_38, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_flash_messages), (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderSlot)(_ctx.$slots, "default")])])])]);
 }
 
 /***/ }),
@@ -26768,10 +26752,10 @@ var _hoisted_4 = {
   "class": "mt-4"
 };
 var _hoisted_5 = {
-  "class": "flex flex-wrap -mx-6"
+  "class": "grid grid-cols-1 md:grid-cols-3 gap-3"
 };
 var _hoisted_6 = {
-  "class": "w-full px-6 sm:w-1/2 xl:w-1/3"
+  "class": ""
 };
 var _hoisted_7 = {
   "class": "flex items-center px-5 py-6 shadow-sm rounded-md bg-white"
@@ -26808,7 +26792,7 @@ var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(
 );
 
 var _hoisted_12 = {
-  "class": "w-full mt-6 px-6 sm:w-1/2 xl:w-1/3 sm:mt-0"
+  "class": ""
 };
 var _hoisted_13 = {
   "class": "flex items-center px-5 py-6 shadow-sm rounded-md bg-white"
@@ -26849,7 +26833,7 @@ var _hoisted_17 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(
 );
 
 var _hoisted_18 = {
-  "class": "w-full mt-6 px-6 sm:w-1/2 xl:w-1/3 xl:mt-0"
+  "class": ""
 };
 var _hoisted_19 = {
   "class": "flex items-center px-5 py-6 shadow-sm rounded-md bg-white"

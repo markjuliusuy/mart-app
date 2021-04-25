@@ -8,11 +8,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/Layouts/AppLayout.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Layouts/AppLayout.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Pages/Auth/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Auth/Login.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Pages/Inventories/Create.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Inventories/Create.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Pages/Inventories/Index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Inventories/Index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Pages/Inventories/Show.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Inventories/Show.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Shared/NavItems.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Shared/NavItems.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Pages/Dashboard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Dashboard.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -186,7 +182,7 @@
       <workItem from="1618668614821" duration="16202000" />
       <workItem from="1618881914531" duration="1373000" />
       <workItem from="1618917107788" duration="14026000" />
-      <workItem from="1619173210829" duration="22925000" />
+      <workItem from="1619173210829" duration="24187000" />
     </task>
     <servers />
   </component>
@@ -230,9 +226,9 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="339" y="162" width="672" height="677" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1619237208822" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1619335571052">
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1619337411078">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1619335571052" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1619337411078" />
   </component>
 </project>
