@@ -67,7 +67,7 @@ export default {
                 },
                 {
                     label: 'Name',
-                    field: 'name',
+                    field: 'contact_person',
                 },
                 {
                     label: 'Email',

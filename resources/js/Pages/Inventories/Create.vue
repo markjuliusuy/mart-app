@@ -20,7 +20,7 @@
                             <!--                              + Add</button>-->
                         </div>
                         <select name="supplier_id" id="supplier_id" v-model="form.supplier_id" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-                            <option v-for="supplier in suppliers" :value="supplier.id">{{ supplier.name }}</option>
+                            <option v-for="supplier in suppliers" :value="supplier.id">{{ supplier.contact_person }}</option>
                         </select>
                         <jet-input-error :message="form.errors.supplier_id" class="mt-2"/>
                     </div>

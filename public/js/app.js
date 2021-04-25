@@ -20050,7 +20050,7 @@ __webpack_require__.r(__webpack_exports__);
         field: 'company_name'
       }, {
         label: 'Name',
-        field: 'name'
+        field: 'contact_person'
       }, {
         label: 'Email',
         field: 'email'
@@ -27566,7 +27566,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   }, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.suppliers, function (supplier) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("option", {
       value: supplier.id
-    }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(supplier.name), 9
+    }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(supplier.contact_person), 9
     /* TEXT, PROPS */
     , ["value"]);
   }), 256
