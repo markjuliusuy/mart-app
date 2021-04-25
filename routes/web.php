@@ -12,6 +12,7 @@ use App\Http\Controllers\DiscountController;
 use App\Http\Controllers\SaleController;
 use App\Http\Controllers\InventoryController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,6 +38,7 @@ Route::get('/', function () {
 Route::middleware(['auth:sanctum', 'verified'])->group(function(){
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
+
     Route::resource('customers', CustomerController::class);
     Route::resource('suppliers', SupplierController::class);
 
@@ -47,4 +49,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function(){
     Route::resource('products', ProductController::class);
     Route::resource('sales', SaleController::class);
     Route::resource('inventories', InventoryController::class);
+
+    Route::resource('users', UserController::class);
+
 });

@@ -27,6 +27,7 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'username',
         'email',
         'password',
     ];
@@ -58,6 +59,15 @@ class User extends Authenticatable
      */
     protected $appends = [
         'profile_photo_url',
+        'user_permissions'
     ];
+
+    public function getUserPermissionsAttribute()
+    {
+        return [
+            'edit' => auth()->user()->can('edit users', $this),
+            'delete' => auth()->user()->can('delete users', $this),
+        ];
+    }
 
 }

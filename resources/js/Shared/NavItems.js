@@ -47,6 +47,11 @@ const navItems = [
         "url": "discounts",
         "label": "Discounts",
     },
+    {
+        "route_index": "users.index",
+        "url": "users",
+        "label": "Users",
+    },
 ];
 
 export default navItems;
