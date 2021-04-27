@@ -7,7 +7,7 @@
                 <div
                     class="bg-gray-900 md:flex-shrink-0 md:w-56 px-6 py-4 flex items-center justify-between md:justify-center transition-all duration-300" :class="{'-ml-56': !sidebarOpen}">
                     <a :href="route('dashboard')" class="mt-1 text-white text-xl">
-                       Mart
+                        {{ $page.props.general_settings.site_name }}
                     </a>
                     <button @click="showingSidebarNavigationDropdown = ! showingSidebarNavigationDropdown" type="button"
                             class="md:hidden">

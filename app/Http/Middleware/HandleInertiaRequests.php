@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Illuminate\Http\Request;
 use Inertia\Middleware;
+use App\Settings\GeneralSettings;
 
 class HandleInertiaRequests extends Middleware
 {
@@ -44,6 +45,11 @@ class HandleInertiaRequests extends Middleware
                     'sale' => $request->session()->get('sale'),
                 ];
             },
+            'general_settings' => function () {
+                return [
+                    'site_name' =>  app(GeneralSettings::class)->site_name
+                ];
+            }
         ]);
     }
 }
