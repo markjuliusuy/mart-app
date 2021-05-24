@@ -52,6 +52,11 @@ const navItems = [
         "url": "users",
         "label": "Users",
     },
+    {
+        "route_index": "settings.index",
+        "url": "settings",
+        "label": "Settings",
+    },
 ];
 
 export default navItems;

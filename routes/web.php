@@ -13,6 +13,7 @@ use App\Http\Controllers\SaleController;
 use App\Http\Controllers\InventoryController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\SettingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -51,5 +52,6 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function(){
     Route::resource('inventories', InventoryController::class);
 
     Route::resource('users', UserController::class);
+    Route::resource('settings', SettingController::class);
 
 });
