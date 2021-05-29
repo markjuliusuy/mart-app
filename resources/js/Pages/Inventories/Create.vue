@@ -60,8 +60,8 @@
                     <table class="w-full whitespace-nowrap">
                         <tr class="text-left font-bold">
                             <th class="px-6 pt-6 pb-4">Product</th>
-                            <th class="px-6 pt-6 pb-4">Quantity</th>
-                            <th class="px-6 pt-6 pb-4" colspan="2">Price</th>
+                            <th class="px-6 pt-6 pb-4">Price</th>
+                            <th class="px-6 pt-6 pb-4" colspan="2">Quantity</th>
                             <th class="px-6 pt-6 pb-4" colspan="2">Amount</th>
                             <th class="px-6 pt-6 pb-4"></th>
                         </tr>
@@ -182,8 +182,8 @@ export default {
                 console.log(selected_product);
                 if(selected_product)
                 {
-                    selected_product.quantity += this.quantity;
-                    selected_product.price = this.price;
+                    selected_product.quantity += parseInt(this.quantity);
+                    selected_product.price = parseFloat(this.price);
                     this.quantity = null;
                     this.price = null;
                     this.product_id = null;
